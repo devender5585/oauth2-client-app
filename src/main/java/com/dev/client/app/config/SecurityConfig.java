@@ -15,7 +15,7 @@ public class SecurityConfig {
 	public SecurityFilterChain clientFilterChain(HttpSecurity http) throws Exception {
 
 		http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
-				.oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("/user", true)) // Handles the login redirect
+				.oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("/show-profile", true)) // Handles the login redirect
 				.oauth2Client(Customizer.withDefaults()); // Handles token management
 		return http.build();
 	}
